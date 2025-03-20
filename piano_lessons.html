@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piano Lessons | Instrument Learning</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #121212, #3a3a3a);
+            color: white;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        header {
+            background: #222;
+            color: #ffcc00;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 3px solid #ffcc00;
+        }
+        .section {
+            margin-top: 20px;
+            padding: 20px;
+            background: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        }
+        .section h2 {
+            color: #ffcc00;
+            text-align: center;
+            font-size: 22px;
+        }
+        .chord {
+            font-family: 'Courier New', monospace;
+            background: #333;
+            padding: 15px;
+            border-radius: 5px;
+            display: block;
+            margin: 15px auto;
+            width: fit-content;
+            text-align: center;
+            border-left: 4px solid #ff7b00;
+            box-shadow: 3px 3px 10px rgba(255, 123, 0, 0.3);
+        }
+        .keyboard {
+            text-align: center;
+            margin-top: 15px;
+        }
+        .keys {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .white-key, .black-key {
+            border: 1px solid #fff;
+            display: inline-block;
+            text-align: center;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 60px;
+        }
+        .white-key {
+            width: 40px;
+            height: 120px;
+            background: #fff;
+            color: black;
+            position: relative;
+        }
+        .black-key {
+            width: 25px;
+            height: 80px;
+            background: black;
+            color: white;
+            position: absolute;
+            margin-left: -12px;
+            margin-right: -12px;
+            z-index: 1;
+        }
+        .back-btn {
+            display: block;
+            margin: 30px auto;
+            text-align: center;
+            background: linear-gradient(90deg, #ff7b00, #ffcc00);
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            width: fit-content;
+            box-shadow: 0px 4px 10px rgba(255, 123, 0, 0.5);
+            transition: 0.3s;
+        }
+        .back-btn:hover {
+            background: linear-gradient(90deg, #ffcc00, #ff7b00);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        🎹 Piano Lessons - Learn & Master Piano Chords
+    </header>
+
+    <div class="container">
+        <h2 style="text-align: center;">📖 Piano Keys & Notes</h2>
+
+        <!-- Piano Keys -->
+        <div class="section">
+            <h2>🎹 Piano Keyboard Layout</h2>
+            <p>The standard names of the piano keys:</p>
+            <div class="keys">
+                <div class="white-key">C</div>
+                <div class="black-key">C#</div>
+                <div class="white-key">D</div>
+                <div class="black-key">D#</div>
+                <div class="white-key">E</div>
+                <div class="white-key">F</div>
+                <div class="black-key">F#</div>
+                <div class="white-key">G</div>
+                <div class="black-key">G#</div>
+                <div class="white-key">A</div>
+                <div class="black-key">A#</div>
+                <div class="white-key">B</div>
+                <div class="white-key">C</div>
+            </div>
+        </div>
+
+        <!-- Basic Piano Chords -->
+        <div class="section">
+            <h2>🎵 Basic Piano Chords</h2>
+            <p>These are some common piano chords for beginners:</p>
+            <pre class="chord">
+C Major:    C  E  G  
+G Major:    G  B  D  
+D Major:    D  F# A  
+E Minor:    E  G  B  
+A Major:    A  C# E  
+            </pre>
+        </div>
+
+        <!-- Advanced Piano Chords -->
+        <div class="section">
+            <h2>🎵 Advanced Piano Chords</h2>
+            <p>Here are some advanced chords used in professional playing:</p>
+            <pre class="chord">
+F Major:    F  A  C  
+B Minor:    B  D  F#  
+C#m7:       C# E  G# B  
+G#7:        G# B  D# F#  
+Dmaj7:      D  F# A  C#  
+            </pre>
+        </div>
+
+        <!-- Back Button -->
+        <a href="courses.html" class="back-btn">⬅ Back to Courses</a>
+    </div>
+
+</body>
+</html>
