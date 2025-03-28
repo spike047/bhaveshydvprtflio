@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live News Feed</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: black;
+        }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        .news-item {
+            background-color: white;
+            border: 1px solid #ddd;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Added shadow for better visual appeal */
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .news-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .news-item h2 {
+            margin-top: 0;
+            color: #333;
+            font-size: 1.2em;
+        }
+
+        .news-item p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .news-item .source {
+            font-style: italic;
+            color: #888;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
+        .news-item a {
+            color: #0078d7;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .news-item a:hover {
+            text-decoration: underline;
+            color: #0056b3;
+        }
+
+        #loading {
+            text-align: center;
+            margin-top: 20px;
+            color: #555;
+            font-size: 1.1em;
+        }
+
+        #error-message {
+            color: red;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="color: white;">Live News</h1>
+        <div id="news-container">
+            <p id="loading">Loading News...</p>
+            <p id="error-message" style="display: none;"></p>
+        </div>
+    </div>
+
+    <script>
+        async function fetchNews() {
+            const newsContainer = document.getElementById('news-container');
+            const loadingIndicator = document.getElementById('loading');
+            const errorMessage = document.getElementById('error-message');
+
+            newsContainer.innerHTML = '';
+            loadingIndicator.style.display = 'block';
+            errorMessage.style.display = 'none';
+
+            try {
+                const apiKey = '1cda94767d07463cb6d55e623027345f';
+                const apiUrl = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${apiKey}`;
+
+                const response = await fetch(apiUrl);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+
+                loadingIndicator.style.display = 'none';
+
+                if (data.status === 'ok' && data.articles) {
+                    if (data.articles.length === 0) {
+                        errorMessage.textContent = "No articles found for your request.";
+                        errorMessage.style.display = 'block';
+                        return;
+                    }
+                    data.articles.forEach(article => {
+                        const newsItem = document.createElement('div');
+                        newsItem.classList.add('news-item');
+
+                        const title = document.createElement('h2');
+                        title.textContent = article.title;
+
+                        const description = document.createElement('p');
+                        description.textContent = article.description || 'No description available.';
+
+                        const source = document.createElement('p');
+                        source.classList.add('source');
+                        source.textContent = `Source: ${article.source.name}`;
+
+                        const link = document.createElement('a');
+                        link.href = article.url;
+                        link.textContent = "Read More";
+                        link.target = "_blank";
+
+                        newsItem.appendChild(title);
+                        newsItem.appendChild(description);
+                        newsItem.appendChild(source);
+                        newsItem.appendChild(link);
+
+                        newsContainer.appendChild(newsItem);
+                    });
+                } else {
+                    errorMessage.textContent = `Error from News API: ${data.message || 'Unknown error'}`;
+                    errorMessage.style.display = 'block';
+                }
+            } catch (error) {
+                loadingIndicator.style.display = 'none';
+                errorMessage.textContent = `An error occurred while fetching news: ${error.message}`;
+                errorMessage.style.display = 'block';
+                console.error('Error fetching news:', error);
+            }
+        }
+
+        fetchNews();
+        setInterval(fetchNews, 300000);
+    </script>
+</body>
+</html>
