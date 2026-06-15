@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Design Gallery | Bhavesh Yadav</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    html{
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      color: #00c6ff;
+      margin: 40px 0 20px;
+      font-size: 40px;
+    }
+
+    h2 {
+      color: #00c6ff;
+      margin: 40px 0 20px;
+      font-size: 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(grid, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      max-width: 500px;
+      border-radius: 10px;
+      box-shadow: 0 0 25px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+       transition: transform 0.3s ease;
+    }
+
+    a.back-link {
+      display: inline-block;
+      margin: 20px;
+      color: #00c6ff;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .back-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 2px;
+      background: #00c6ff;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .back-link:hover::after {
+      transform: scaleX(1);
+    }
+
+    .back-link:hover {
+      color: #66e0ff;
+      transform: scale(1.05);
+       transition: transform 0.3s ease;
+    }
+
+  
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0f2027;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #00c6ff;
+    }
+
+    .nav-brand {
+      color: #00c6ff;
+      font-size: 25px;
+      font-weight: bold;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    .nav-links li a {
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      color: #66e0ff;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 28px;
+      color: #00c6ff;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
+
+   @media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #0f2027;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    border: 1px solid #00c6ff;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+
+
+    @media (max-width: 600px) {
+      .gallery img {
+        max-width: 90%;
+      }
+    }
+    
+  </style>
+</head>
+<body>
+  
+  <nav class="navbar">
+    <div class="nav-brand">My Gallery</div>
+    <button class="hamburger" id="hamburger">&#9776;</button>
+    <ul class="nav-links" id="navbar-desktop-links">
+      <li><a href="index.html" data-aos="fade-left" data-aos-delay="100">Home</a></li>
+      <li><a href="#certification" data-aos="fade-right" data-aos-delay="200">Certification</a></li>
+      <li><a href="#designedbyme"data-aos="fade-left" data-aos-delay="300">Designed by Me</a></li>
+      <li><a href="Projectlink.html"data-aos="fade-right" data-aos-delay="400">MyProjects</a></li>
+    <li><a href="view-resume.html" data-aos="fade-left" data-aos-delay="500">My Resume</a></li>
+    </ul>
+  </nav>
+
+  <section id="certification">
+  <h2>Certification</h2>
+  <div class="gallery">
+    <a href="WhatsApp Image 2025-05-20 at 15.41.33_cf834795.jpg" target="_blank" data-aos="fade-left" data-aos-delay="100">
+      <img src="WhatsApp Image 2025-05-20 at 15.41.33_cf834795.jpg" alt="Certificate Design CF834795">
+    </a>
+    <a href="WhatsApp Image 2025-05-20 at 15.41.33_e69ae692.jpg" target="_blank" data-aos="fade-right" data-aos-delay="200">
+      <img src="WhatsApp Image 2025-05-20 at 15.41.33_e69ae692.jpg" alt="Certificate Design E69AE692">
+    </a>
+    <a href="WhatsApp Image 2025-05-20 at 15.41.33_d9d928b1.jpg" target="_blank" data-aos="fade-left" data-aos-delay="300">
+      <img src="WhatsApp Image 2025-05-20 at 15.41.33_d9d928b1.jpg" alt="Certificate Design D9D928B1">
+    </a>
+  </div>
+
+  <h2>Designed by Me</h2>
+  <div class="gallery">
+    <a href="WhatsApp Image 2025-05-20 at 15.52.12_da7a4c67.jpg" target="_blank" data-aos="fade-right" data-aos-delay="100">
+      <img src="WhatsApp Image 2025-05-20 at 15.52.12_da7a4c67.jpg" alt="Booklet Cover Design DA7A4C67">
+    </a>
+    <a href="WhatsApp Image 2025-05-20 at 15.41.33_353c4d11.jpg" target="_blank" data-aos="fade-left" data-aos-delay="150">
+      <img src="WhatsApp Image 2025-05-20 at 15.41.33_353c4d11.jpg" alt="Certificate Design 353C4D11">
+    </a>
+    <a href="WhatsApp Image 2025-05-20 at 15.41.32_bce5399f.jpg" target="_blank" data-aos="fade-right" data-aos-delay="200">
+      <img src="WhatsApp Image 2025-05-20 at 15.41.32_bce5399f.jpg" alt="Certificate Design BCE5399F">
+    </a>
+    <a href="WhatsApp Image 2025-05-20 at 15.52.12_9f73145e.jpg" target="_blank" data-aos="fade-left" data-aos-delay="250">
+      <img src="WhatsApp Image 2025-05-20 at 15.52.12_9f73145e.jpg" alt="Booklet Inner Page 9F73145E">
+    </a>
+    <a href="WhatsApp Image 2025-05-20 at 17.20.27_097670ef.jpg" target="_blank" data-aos="fade-right" data-aos-delay="300">
+      <img src="WhatsApp Image 2025-05-20 at 17.20.27_097670ef.jpg" alt="Booklet Inner Page 097670EF">
+    </a>
+    <a href="WhatsApp Image 2025-05-20 at 17.20.28_4ad525c0.jpg" target="_blank" data-aos="fade-left" data-aos-delay="350">
+      <img src="WhatsApp Image 2025-05-20 at 17.20.28_4ad525c0.jpg" alt="Booklet Cover Design 4AD525C0">
+    </a>
+    <a href="WhatsApp Image 2025-05-20 at 16.57.59_fcf31bbb.jpg" target="_blank" data-aos="fade-right" data-aos-delay="400">
+      <img src="WhatsApp Image 2025-05-20 at 16.57.59_fcf31bbb.jpg" alt="Booklet Cover Design FCF31BBB">
+    </a>
+    <a href="WhatsApp Image 2025-05-30 at 12.09.53_d3f6496e.jpg" target="_blank" data-aos="fade-left" data-aos-delay="450">
+      <img src="WhatsApp Image 2025-05-30 at 12.09.53_d3f6496e.jpg" alt="Booklet Cover Design D3F6496E">
+    </a>
+    <a href="WhatsApp Image 2025-05-30 at 12.12.34_4f4a3a49.jpg" target="_blank" data-aos="fade-right" data-aos-delay="500">
+      <img src="WhatsApp Image 2025-05-30 at 12.12.34_4f4a3a49.jpg" alt="Booklet Cover Design 4F4A3A49">
+    </a>
+    <a href="WhatsApp Image 2025-05-30 at 12.12.34_96827cd8.jpg" target="_blank" data-aos="fade-left" data-aos-delay="550">
+      <img src="WhatsApp Image 2025-05-30 at 12.12.34_96827cd8.jpg" alt="Booklet Cover Design 96827CD8">
+    </a>
+    <a href="WhatsApp Image 2025-05-30 at 12.12.35_65f49b60.jpg" target="_blank" data-aos="fade-right" data-aos-delay="600">
+      <img src="WhatsApp Image 2025-05-30 at 12.12.35_65f49b60.jpg" alt="Booklet Cover Design 65F49B60">
+    </a>
+    <a href="WhatsApp Image 2025-05-30 at 12.12.35_ccbe42d3.jpg" target="_blank" data-aos="fade-left" data-aos-delay="650">
+      <img src="WhatsApp Image 2025-05-30 at 12.12.35_ccbe42d3.jpg" alt="Booklet Cover Design CCBE42D3">
+    </a>
+  </div>
+</section>
+
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+  </div>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 800, 
+    mirror: true});
+
+    const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navbar-desktop-links');
+
+  
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+
+  
+  document.addEventListener('click', function (event) {
+    if (!event.target.closest('.navbar')) {
+      navLinks.classList.remove('show');
+    }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects | Bhavesh Yadav</title>
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <style>
+    html{
+      scroll-behavior: smooth;
+    }
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+      text-align: center;
+      padding: 0 10px;
+    }
+
+    h1 {
+      text-align: center;
+      margin: 40px 0 20px;
+      color: #00c6ff;
+      font-size: 2.5rem;
+    }
+
+   .projects-container {
+  display: grid;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px 0;
+}
+
+    .project-card {
+  background: #1c1c1c;
+  border-radius: 15px;
+  padding: 20px;
+  width: 60%;
+  max-width: auto;
+  height: auto;
+  box-sizing: border-box;
+  text-align: left;
+  color: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: auto;
+  overflow: hidden;
+  margin: auto;
+}
+
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.97);
+  transition: box-shadow 3s ease;
+}
+
+
+    .project-card h3 {
+      margin: 0 0 10px;
+      color: #00c6ff;
+      font-size: 1.30rem;
+    }
+
+    .project-card p {
+      font-size: 1rem;
+    }
+
+   .project-card a {
+    font-weight: bold;
+  position: relative;
+  display: inline-block;
+  color: #00c6ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.project-card a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: auto;
+  height: auto;
+  background-color: #00c6ff;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.project-card a:hover {
+  transform: scale(1.05);
+   transition: transform 0.3s ease;
+  color: #66e0ff;
+}
+
+.project-card a:hover::after {
+  transform: scaleX(1);
+}
+
+
+@keyframes slideArrow {
+  0% { opacity: 0; transform: translateX(-5px); }
+  100% { opacity: 1; transform: translateX(0); }
+}
+
+
+    a.back-link {
+      display: inline-block;
+      margin: 1px;
+      color: #00c6ff;
+      text-decoration: none;
+      font-weight: 600;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    .back-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 2px;
+      background: #00c6ff;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s ease;
+    }
+
+    .back-link:hover::after {
+      transform: scaleX(1);
+    }
+
+    .back-link:hover {
+      color: #66e0ff;
+      transform: scale(1.05);
+       transition: transform 0.3s ease;
+    }
+
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+
+      .project-card h3 {
+        font-size: 1rem;
+      }
+
+      .project-card p, .project-card a {
+        font-size: 0.9rem;
+      }
+
+      .back-link {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .projects-container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .project-card {
+        width: 90%;
+      }
+    }
+
+    .projects-container {
+  display: grid;
+  gap: 20px;
+  padding: 40px 20px;
+  justify-content: center;
+  background-image: url('images/project-bg.jpg'); /* 🔁 Replace with your actual image path */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  position: relative;
+  z-index: 1;
+  background-image: url('images/project-bg.jpg');
+
+}
+.projects-container::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: -1;
+  border-radius: 15px;
+}
+
+
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0f2027;
+  padding: 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 1px solid #00c6ff;
+}
+
+.nav-brand {
+  color: #00c6ff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+}
+
+.nav-links li a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: #66e0ff;
+}
+
+
+.hamburger {
+  display: none;
+  font-size: 30px;
+  color: #00c6ff;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #0f2027;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    width: 200px;
+    border: 1px solid #00c6ff;
+    padding: 10px;
+    border-radius: 10px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
+html {
+  scroll-behavior: smooth;
+}
+
+.pending-popup {
+    display: none;
+    position: absolute;
+    bottom: 125%;
+    left: 0;
+    background-color: #333;
+    color: #fff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    white-space: nowrap;
+    z-index: 10;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .project-card a:hover .pending-popup {
+    display: block;
+    opacity: 1;
+  }
+  </style>
+</head>
+<body>
+ 
+<nav class="navbar">
+  <div class="nav-brand">My Projects</div>
+  <button class="hamburger" id="hamburger">&#9776;</button>
+  <ul class="nav-links" id="navbar-links">
+    <li><a href="index.html"data-aos="fade-left" data-aos-delay="100">Home</a></li>
+    <li><a href="Design Gallery.html"data-aos="fade-right" data-aos-delay="200">My Designs & Certificate</a></li>
+ <li><a href="view-resume.html" data-aos="fade-left" data-aos-delay="300">My Resume</a></li> 
+  </ul>
+</nav>
+
+
+
+  <div class="projects-container">
+    <div class="project-card" data-aos="fade-left" data-aos-delay="50">
+      <h3>TUNINGARC – Instrument Learning Website</h3>
+      <p>Built with React.js, PHP, and MySQL, TUNINGARC offers interactive music lessons with
+         Google Login authentication 
+        and smooth background animations. 
+        It features responsive design, course selection, and tutorials for instruments like guitar, piano, and violin.</p>
+      <a href="https://tuningarc.netlify.app/" target="_blank"> Visit I AM SHOPPER
+    <span class="pending-popup">🚧 This project is still pending</span></a>
+    </div>
+
+    <div class="project-card" data-aos="fade-right" data-aos-delay="100">
+      <h3>Live News Feed</h3>
+      <p>A dynamic news platform powered by NewsAPI, 
+        providing real-time updates with seamless language support in English, Hindi, and Marathi.
+       Designed for a responsive and accessible user experience across all devices.</p>
+      <a href="https://mylivenewsfeed.netlify.app/" target="_blank">Open News Feed</a>
+    </div>
+
+    <div class="project-card" data-aos="fade-left" data-aos-delay="150">
+      <h3>Portfolio Website</h3>
+      <p>A fully responsive personal portfolio built using HTML, CSS, and JavaScript.
+         Showcases projects,My design,skills, and contact details with a clean and modern layout.</p>
+      <a href="index.html" target="_blank">You are already here</a>
+    </div>
+
+    <div class="project-card" data-aos="fade-right" data-aos-delay="200">
+      <h3>Local Video Player-LVP</h3>
+      <p>A custom-designed HTML5 video player featuring interactive controls, responsive layout,
+         and support for local file playback, built with pure HTML, CSS, and JavaScript.</p>
+      <a href="https://mylocalvideoplayer.netlify.app/" target="_blank">Open Video Player</a>
+    </div>
+
+    <div class="project-card" data-aos="fade-left" data-aos-delay="250">
+      <h3>AI Career Advisor</h3>
+      <p>A responsive and interactive career guidance tool powered by AI, built with HTML, CSS, JavaScript,
+         and integrated with the OpenRouter API for dynamic, personalized advice.</p>
+      <a href="https://myaicareerpath.netlify.app/" target="_blank">Open Career Advisor</a>
+    </div>
+
+    <div class="project-card" data-aos="fade-right" data-aos-delay="300">
+      <h3>SAB craft</h3>
+      <p>An advanced, fully responsive eCommerce website focused on buying products,
+         built with HTML, CSS, and JavaScript, featuring a user-friendly interface and smooth navigation.</p>
+        <a href="#pending" target="_blank">
+    Visit I AM SHOPPER
+    <span class="pending-popup">🚧 This project is still pending</span>
+      </a>
+    </div>
+
+    <div class="project-card" data-aos="fade-left" data-aos-delay="350">
+  <h3>I AM SHOPPER</h3>
+  <p>I AM SHOPPER is an advanced, responsive eCommerce website built with HTML, CSS, and JavaScript.
+     It allows users to browse, buy, and sell products with smooth navigation, product filtering,
+    a shopping cart, and secure checkout—optimized for all devices.
+  
+  </p>
+  <a href="#pending" target="_blank">
+    Visit I AM SHOPPER
+    <span class="pending-popup">🚧 This project is still pending</span>
+  </a>
+</div>
+  
+
+  <a href="index.html" class="back-link">&larr; Back to Portfolio</a>
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 600,
+      mirror: true,
+    });
+
+
+    const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('navbar-links');
+
+  
+  hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+
+  
+  document.addEventListener('click', function (e) {
+    if (!e.target.closest('.navbar')) {
+      navLinks.classList.remove('show');
+    }
+  });
+
+  </script>
+</body>
+</html>
